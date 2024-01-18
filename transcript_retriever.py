@@ -1,7 +1,13 @@
+!pip install fpdf
 !pip install pytube
 !pip install youtube-transcript-api
+!pip install fpdf
+!pip install youtube_transcript_api
+
 from youtube_transcript_api import YouTubeTranscriptApi
-def get_transcript(youtube_url):
+from fpdf import FPDF
+
+def get_transcript(youtube_url, output_pdf_path):
     video_id = youtube_url.split("v=")[-1]
     transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 
@@ -20,6 +26,24 @@ def get_transcript(youtube_url):
             raise Exception("No suitable transcript found.")
 
     full_transcript = " ".join([part['text'] for part in transcript.fetch()])
+
+    # Save the transcript to a PDF file
+    save_to_pdf(full_transcript, language_code, output_pdf_path)
+
     return full_transcript, language_code  # Return both the transcript and detected language
 
-get_transcript("https://www.youtube.com/watch?v=tsJdXpnl48g&list=RDNStsJdXpnl48g&start_radio=1")
+def save_to_pdf(transcript, language_code, output_pdf_path):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    
+    pdf.cell(200, 10, txt=f"Language Code: {language_code}", ln=True, align='C')
+    pdf.ln(10)
+    
+    pdf.multi_cell(0, 10, txt=transcript)
+
+    pdf.output(output_pdf_path)
+
+# Example usage
+output_pdf_path = "transcript_output.pdf"
+get_transcript("https://www.youtube.com/watch?v=tsJdXpnl48g&list=RDNStsJdXpnl48g&start_radio=1", output_pdf_path)
