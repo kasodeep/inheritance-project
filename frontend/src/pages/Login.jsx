@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import GoogleIcon from '../assets/icons/google.svg'
-import Image from '../assets/images/image.jpg'
+import Image from '../assets/images/logo.png'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -162,14 +162,14 @@ const Login = () => {
           </div>
 
           {/* Right Side. */}
-          <div className="relative">
+          <div className="relative w-[400px]">
             <img
               src={Image}
               alt="img"
-              className="w-[400px] h-full block rounded-r-2xl max-lg:hidden object-cover"
+              className="mt-16 h-70 block rounded-r-2xl max-lg:hidden object-cover"
             />
             {/* Text on Image.  */}
-            <div className="absolute block bottom-10 right-6 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg max-lg:hidden">
+            <div className="absolute block bottom-10 right-6 p-6 bg-black bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg max-lg:hidden">
               <span className="text-white text-xl">
                 Why waste time watching Youtube?"
                 <br />

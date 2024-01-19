@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth'
 import { useEffect } from 'react'
 import axiosClient from '../api/axiosClient'
 import Modal from './Modal'
+import Logo from '../assets/images/icon.png'
 
 const Nav = () => {
   const [sidebar, setSideBar] = useState(false)
@@ -34,11 +35,11 @@ const Nav = () => {
           {/* Logo */}
           <a href="/">
             <img
-              src=""
+              src={Logo}
               alt="Logo"
-              width={129}
-              height={29}
-              className="m-0 w-[129px] h-[29px]"
+              width={103}
+              height={40}
+              className="m-0 object-cover bg-transparent"
             />
           </a>
 
