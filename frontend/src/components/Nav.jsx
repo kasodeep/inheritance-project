@@ -6,9 +6,12 @@ import { useNavigate, Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import { useEffect } from 'react'
 import axiosClient from '../api/axiosClient'
+import Modal from './Modal'
 
 const Nav = () => {
   const [sidebar, setSideBar] = useState(false)
+  const [showLinkModal, setShowLinkModal] = useState(false)
+
   const { auth, setAuth } = useAuth()
   const navigate = useNavigate()
 
@@ -61,6 +64,12 @@ const Nav = () => {
                 onClick={logoutHandler}
               >
                 <Link>Logout</Link>
+              </button>
+              <button
+                className="border-[#4986d6] border-2 px-3 rounded-lg py-1 shadow-lg shadow-[#4986d6] hover:bg-[#4986d6] hover:translate-x-1"
+                onClick={() => setShowLinkModal(true)}
+              >
+                <Link>Add Link</Link>
               </button>
             </div>
           ) : (
@@ -121,6 +130,12 @@ const Nav = () => {
               >
                 <Link>Logout</Link>
               </button>
+              <button
+                className="border-[#4986d6] border-2 px-3 mt-2 rounded-lg py-1 shadow-lg shadow-[#4986d6] hover:bg-[#4986d6] hover:translate-x-1"
+                onClick={() => setShowLinkModal(true)}
+              >
+                <Link>Add Link</Link>
+              </button>
             </div>
           ) : (
             <div className="flex flex-col gap-2 text-lg leading-normal font-medium font-montserrat">
@@ -135,6 +150,9 @@ const Nav = () => {
           )}
         </ul>
       )}
+
+      {/* Add Link Modal */}
+      <Modal isOpen={showLinkModal} onClose={() => setShowLinkModal(false)} />
     </>
   )
 }

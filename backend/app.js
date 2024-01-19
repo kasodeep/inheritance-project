@@ -23,6 +23,7 @@ const connectToMongo = require("./db/connect")
 
 // routers
 const authRouter = require("./routes/authRoutes")
+const videoRouter = require("./routes/videoRoutes")
 
 // middleware
 const notFoundMiddleware = require("./middleware/not-found")
@@ -41,6 +42,7 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/video", videoRouter)
 
 // Error handler and not found middlewares.
 app.use(notFoundMiddleware)
