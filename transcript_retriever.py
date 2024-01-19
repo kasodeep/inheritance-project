@@ -1,11 +1,11 @@
-!pip install fpdf
-!pip install pytube
-!pip install youtube-transcript-api
-!pip install fpdf
-!pip install youtube_transcript_api
+# pip install fpdf
+# pip install pytube
+# pip install youtube-transcript-api
+# pip install fpdf
+# pip install youtube_transcript_api
 
 from youtube_transcript_api import YouTubeTranscriptApi
-from fpdf import FPDF
+from fpdf import *
 
 def get_transcript(youtube_url, output_pdf_path):
     video_id = youtube_url.split("v=")[-1]
