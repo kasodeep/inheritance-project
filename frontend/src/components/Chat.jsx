@@ -52,13 +52,13 @@ const Chat = ({ onClose }) => {
       <div
         className={`${
           showChat ? 'block' : 'hidden'
-        } absolute z-10 bottom-32 right-5 w-100 `}
+        } fixed z-10 bottom-32 right-5 rounded-lg shadow-lg shadow-black`}
         id="Chat"
       >
         <div className="flex flex-col h-full bg-white rounded-lg overflow-hidden shadow-lg">
           {/* Chat Messages. */}
           <div
-            className="flex-1 px-4 py-2 overflow-y-auto max-h-64"
+            className="flex-1 px-4 py-2 overflow-y-auto max-h-64 mt-2"
             ref={messagesRef}
           >
             {messages.map((message) => (

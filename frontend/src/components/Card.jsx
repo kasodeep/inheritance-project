@@ -10,7 +10,7 @@ function Card({ title, description, thumbnailUrl, onRemove }) {
   return (
     // Card.
     <>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col">
+      <div className="max-w-sm rounded overflow-hidden shadow-xl shadow-blue-900 bg-white flex flex-col">
         {/* Image. */}
         <img className="w-full flex-shrink-0" src={thumbnailUrl} alt={title} />
 
