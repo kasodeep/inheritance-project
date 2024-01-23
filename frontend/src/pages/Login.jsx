@@ -171,9 +171,9 @@ const Login = () => {
             {/* Text on Image.  */}
             <div className="absolute block bottom-10 right-6 p-6 bg-black bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg max-lg:hidden">
               <span className="text-white text-xl">
-                Why waste time watching Youtube?"
+                Why waste time watching Youtube?
                 <br />
-                Get summary and screenshpots. <br />
+                Get summary and screenshots. <br />
                 Imagine having more time to spend!"
               </span>
             </div>

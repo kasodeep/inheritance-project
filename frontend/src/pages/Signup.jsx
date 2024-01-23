@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import useAuth from '../hooks/useAuth'
 import axiosClient from '../api/axiosClient'
-
+import Logo from '../assets/images/icon.png'
 // Yup schema for validation.
 const schema = yup
   .object()
@@ -53,7 +53,6 @@ const Signup = () => {
   // Submit Form Handler.
   const submitForm = async (data, e) => {
     e.preventDefault()
-    let resp
 
     const config = {
       email: data.email,
@@ -62,11 +61,9 @@ const Signup = () => {
     }
 
     // Regitser in the user.
-    resp = await axiosClient
+    await axiosClient
       .post('/api/v1/auth/register', config)
       .then((resp) => {
-        resp = resp.data
-
         if (resp?.status === 201) {
           // Logged In Successfully.
           setErrMsg('')

@@ -7,7 +7,7 @@
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
-  "author": "Kasodariya Deep",
+  "author": "Kasodariya Deep, Ayush Gulhane",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
