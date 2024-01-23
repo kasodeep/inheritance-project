@@ -61,10 +61,9 @@ const Signup = () => {
     }
 
     // Regitser in the user.
-    const resp = await axiosClient
+    await axiosClient
       .post('/api/v1/auth/register', config)
       .then((resp) => {
-        
         if (resp?.status === 201) {
           // Logged In Successfully.
           setErrMsg('')
