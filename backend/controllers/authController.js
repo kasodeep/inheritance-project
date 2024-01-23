@@ -14,7 +14,7 @@ const register = async (req, res) => {
 
     // Create the user.
     const user = await User.create({ name, email, password, role })
-    console.log('data');
+    
 
     // Creating the token and set the cookie.
     const tokenUser = createTokenUser(user)
