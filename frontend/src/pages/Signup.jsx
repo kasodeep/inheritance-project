@@ -88,9 +88,9 @@ const Signup = () => {
         <div className="flex flex-col justify-center p-4 px-8 max-lg:p-8">
           {/* Top Text. */}
           <div className="flex justify-around">
-            <span className="mb-3 text-4xl font-bold">Welcome</span>
-            <span>
-              <img src="" alt="Logo" className="mt-6" />
+            <span className="mb-3 text-4xl font-bold pt-4">Welcome to</span>
+            <span >
+              <img src={Logo} alt="Logo" className="center mt-6 h-16" />
             </span>
           </div>
 

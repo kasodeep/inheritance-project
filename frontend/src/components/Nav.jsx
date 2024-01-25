@@ -22,7 +22,7 @@ const Nav = () => {
     setAuth(false)
 
     await axiosClient.get('/api/v1/auth/logout')
-    navigate('/home')
+    navigate('/login')
   }
 
   useEffect(() => {}, [auth])
