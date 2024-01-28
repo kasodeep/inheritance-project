@@ -1,0 +1,6 @@
+transformers
+moviepy
+torch
+torchvision
+imagehash
+FPDF
