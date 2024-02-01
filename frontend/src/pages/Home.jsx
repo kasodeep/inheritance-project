@@ -5,6 +5,7 @@ import axiosClient from '../api/axiosClient'
 
 const Home = () => {
   const [urls, setUrls] = useState()
+  const [isLoading, setIsLoading] = useState(false)
   const { auth } = useAuth()
 
   const fetchUrls = async () => {
@@ -20,9 +21,24 @@ const Home = () => {
     fetchUrls()
   }
 
-  const handleDownload = (id) => {
-    console.log('Download:', id)
-    // Add logic to handle download
+  const handleDownload = (url) => {
+    axios
+      .get('http://localhost:5000/download-pdf', url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobUrl = window.URL.createObjectURL(blob)
+
+        const link = document.createElement('a')
+        link.href = blobUrl
+        link.setAttribute('download', 'pdf_files.zip')
+
+        document.body.appendChild(link)
+        link.click()
+
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(blobUrl)
+      })
+      .catch((error) => console.error('Error:', error))
   }
 
   useEffect(() => {
@@ -41,7 +57,7 @@ const Home = () => {
               description={video.description}
               thumbnailUrl={video.thumbnailUrl}
               onRemove={() => handleRemove(video._id)}
-              onDownload={() => handleDownload(video._id)}
+              onDownload={() => handleDownload(video.url)}
             />
           ))}
         </div>

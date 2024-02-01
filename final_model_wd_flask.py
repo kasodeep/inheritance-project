@@ -293,6 +293,8 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import json
 import traceback
+import os
+from zipfile import ZipFile
 app = Flask(__name__)
 CORS(app, origins=['http://localhost:5173'])
 
@@ -300,12 +302,20 @@ CORS(app, origins=['http://localhost:5173'])
 def home():
     if request.method == 'POST':
         try:
-            data = request.json
-            run(data["url"])
-            # run(url)
-            path = "C:/Users/Nishit kekane/Desktop/flask/slides.pdf"
-            message = "Successful"
-            return send_file(path, as_attachment=True, download_name='summary.pdf')
+            run(request.json["url"])
+            current_directory = os.getcwd()
+
+            pdf_paths = [
+        os.path.join(current_directory, 'slides.pdf'),
+        os.path.join(current_directory, 'output_summary.pdf')
+        ]
+            
+            zip_filename = 'pdf_files.zip'
+            with ZipFile(zip_filename, 'w') as zip:
+                for pdf_path in pdf_paths:
+                    zip.write(pdf_path, os.path.basename(pdf_path))
+            
+            return send_file(zip_filename, as_attachment=True)
         except Exception as e:
             print(f"Error processing request: {e}")
             
@@ -314,4 +324,4 @@ def home():
 
 
 if __name__ == '__main__':
-   app.run(debug=True,port=5000)
+   app.run(debug=True,port=3000)
