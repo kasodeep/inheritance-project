@@ -278,11 +278,17 @@ def images(video_path,output_pdf_path):
 """**Running Functions**"""
 
 def run(url):
+    print(type(url),url)
     get_transcript(url,"transcript_output.pdf")
+    print(1)
     text = extract_text_from_pdf("transcript_output.pdf")
+    print(2)
     summary = generate_summary_t5(text,tokenizer,model)
+    print(3)
     video_path=download_youtube_video(url,'video.mp4')
+    print(4)
     images(video_path,'slides.pdf')
+    print(5)
 
 #https://www.youtube.com/watch?v=reUZRyXxUs4
 
@@ -297,12 +303,21 @@ import os
 from zipfile import ZipFile
 app = Flask(__name__)
 CORS(app, origins=['http://localhost:5173'])
-
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 @app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
+        print('reached flask')
         try:
-            run(request.json["url"])
+            data = request.json
+            print(data)
+            run(data["url"])
             current_directory = os.getcwd()
 
             pdf_paths = [

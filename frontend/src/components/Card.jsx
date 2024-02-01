@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import Chat from './Chat'
-
-function Card({ title, description, thumbnailUrl, onRemove }) {
+import axios from "axios"
+function Card({ title, description, thumbnailUrl, onRemove, onDownload }) {
   const [showChatButton, setChatButton] = useState(false)
 
-  const onDownload = () => setChatButton(true)
+  const showChat = () => {
+    setChatButton(true)
+
+  }
 
   return (
     // Card.
@@ -34,7 +37,7 @@ function Card({ title, description, thumbnailUrl, onRemove }) {
           <button
             type="button"
             className="py-2 px-4 bg-black rounded-lg text-white font-medium hover:bg-white hover:text-black hover:border-black hover:border-x-2 transition duration-300 shadow-lg"
-            onClick={onDownload}
+            onClick={()=>{showChat(); onDownload();}}
           >
             <i className="fa-solid fa-download" /> Download
           </button>
