@@ -1,14 +1,12 @@
-import React from 'react'
-import { useState } from 'react'
-import Chat from './Chat'
-import axios from "axios"
+import React from "react";
+import { useState } from "react";
+import Chat from "./Chat";
 function Card({ title, description, thumbnailUrl, onRemove, onDownload }) {
-  const [showChatButton, setChatButton] = useState(false)
+  const [showChatButton, setChatButton] = useState(false);
 
   const showChat = () => {
-    setChatButton(true)
-
-  }
+    setChatButton(true);
+  };
 
   return (
     // Card.
@@ -37,7 +35,10 @@ function Card({ title, description, thumbnailUrl, onRemove, onDownload }) {
           <button
             type="button"
             className="py-2 px-4 bg-black rounded-lg text-white font-medium hover:bg-white hover:text-black hover:border-black hover:border-x-2 transition duration-300 shadow-lg"
-            onClick={()=>{showChat(); onDownload();}}
+            onClick={() => {
+              showChat();
+              onDownload();
+            }}
           >
             <i className="fa-solid fa-download" /> Download
           </button>
@@ -48,7 +49,7 @@ function Card({ title, description, thumbnailUrl, onRemove, onDownload }) {
         <Chat isOpen={true} onClose={() => setChatButton(false)} />
       )}
     </>
-  )
+  );
 }
 
-export default Card
+export default Card;

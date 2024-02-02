@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import useAuth from "../hooks/useAuth";
 import axiosClient from "../api/axiosClient";
-import axios from "axios";
 import Loading from "../components/Loading";
 const Home = () => {
   const [urls, setUrls] = useState();
@@ -22,35 +21,36 @@ const Home = () => {
     fetchUrls();
   };
 
-const handleDownload = (url) => {
-  axiosClient
-    .post(
-      "http://localhost:3000/",
-      { url: url },
-      { responseType: "arraybuffer" }
-    )
-    .then((response) => {
-      // Create a Blob from the received data
-      const blob = new Blob([response.data], { type: "application/zip" });
+  const handleDownload = (url) => {
+    setIsLoading(true);
+    axiosClient
+      .post(
+        "http://localhost:3000/",
+        { url: url },
+        { responseType: "arraybuffer" }
+      )
+      .then((response) => {
+        // Create a Blob from the received data
+        const blob = new Blob([response.data], { type: "application/zip" });
 
-      // Use createObjectURL to generate a URL for the blob
-      const blobUrl = window.URL.createObjectURL(blob);
+        // Use createObjectURL to generate a URL for the blob
+        const blobUrl = window.URL.createObjectURL(blob);
 
-      // Create a link and trigger a download
-      const link = document.createElement("a");
-      link.href = blobUrl;
-      link.setAttribute("download", "pdf_files.zip");
+        // Create a link and trigger a download
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.setAttribute("download", "pdf_files.zip");
 
-      document.body.appendChild(link);
-      link.click();
+        document.body.appendChild(link);
+        link.click();
 
-      // Clean up
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
-    })
-    .catch((error) => console.error("Error:", error));
-};
-
+        // Clean up
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+      })
+      .catch((error) => console.error("Error:", error));
+    setIsLoading(false);
+  };
 
   useEffect(() => {
     fetchUrls();
@@ -75,7 +75,7 @@ const handleDownload = (url) => {
           </div>
         </div>
       </section>
-      <Loading isLoading={isLoading} onClose={() => setShowLinkModal(false)} />
+      <Loading isLoading={isLoading} />;
     </>
   );
 };

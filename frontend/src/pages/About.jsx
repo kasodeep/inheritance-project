@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <section className="xl:padding-l wide:padding-r padding-b py-14">
-      <div className="container mx-auto mt-8 text-white font-montserrat leading-normal text-lg px-2 rounded-sm h-full hover:underline hover:underline-offset-4 hover:decoration-[#4986d6] hover:translate-x-1">
+      <div className="container mx-auto mt-8 text-white font-montserrat leading-normal text-lg px-2 rounded-sm h-full ">
         <h1 className="text-3xl font-bold mb-4">About Our Website</h1>
 
         <p className="mb-4">
