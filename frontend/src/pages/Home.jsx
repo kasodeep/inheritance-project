@@ -47,9 +47,12 @@ const Home = () => {
         // Clean up
         document.body.removeChild(link);
         window.URL.revokeObjectURL(blobUrl);
+        setIsLoading(false);
       })
-      .catch((error) => console.error("Error:", error));
-    setIsLoading(false);
+      .catch((error) => {
+        setIsLoading(false);
+        console.error("Error:", error);
+      });
   };
 
   useEffect(() => {
