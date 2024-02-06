@@ -1,33 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react'
-import chaticon from '../assets/images/chaticon.png'
-
+import React, { useState, useEffect, useRef } from "react";
+import chaticon from "../assets/images/chaticon.png";
+import axiosClient from "../api/axiosClient";
 const Chat = ({ onClose }) => {
-  const [showChat, setShowChat] = useState(false)
-  const [messages, setMessages] = useState([])
-
-  const [inputMessage, setInputMessage] = useState('')
-  const messagesRef = useRef(null)
-  const handleInputChange = (e) => setInputMessage(e.target.value)
+  const [showChat, setShowChat] = useState(false);
+  const [messages, setMessages] = useState([]);
+  var index = 0;
+  const [inputMessage, setInputMessage] = useState("");
+  const messagesRef = useRef(null);
+  const handleInputChange = (e) => setInputMessage(e.target.value);
 
   // We can set the logic here.
   const handleSendMessage = () => {
-    if (inputMessage.trim() !== '') {
-      const prevMessages = messages
-      setMessages([
-        ...prevMessages,
-        { text: inputMessage, sender: 'user' },
-        { text: "Sure, I'll get back to you!", sender: 'bot' },
-      ])
-      setInputMessage('')
+    if (inputMessage.trim() !== "") {
+      const userMessage = { text: inputMessage, sender: "user", key: index++ };
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+      axiosClient
+        .post("http://localhost:4000/", { question: inputMessage })
+        .then((response) => {
+          const responseData = response.data;
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { text: responseData, sender: "bot", key: index++ },
+          ]);
+          setInputMessage("");
+        });
     }
-  }
+  };
+
+
 
   useEffect(() => {
     // Scroll to the bottom when messages change.
     if (messagesRef.current) {
-      messagesRef.current.scrollTop = messagesRef.current.scrollHeight
+      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
     }
-  }, [messages])
+  }, [messages]);
 
   return (
     // Main Div
@@ -37,11 +45,11 @@ const Chat = ({ onClose }) => {
         type="button"
         className="absolute bottom-5 right-5 w-30 h-16 px-4 bg-white rounded-lg text-black font-medium shadow-lg transform transition-transform duration-300 hover:scale-110"
         onClick={() => {
-          setShowChat(!showChat)
+          setShowChat(!showChat);
           if (!messages)
             setMessages([
-              { text: 'Welcome! How can I assist you?', sender: 'bot' },
-            ])
+              { text: "Welcome! How can I assist you?", sender: "bot" },
+            ]);
         }}
       >
         <img alt="chat-icon" src={chaticon} className="h-10 inline mr-2" />
@@ -51,7 +59,7 @@ const Chat = ({ onClose }) => {
       {/* Chat Interface. */}
       <div
         className={`${
-          showChat ? 'block' : 'hidden'
+          showChat ? "block" : "hidden"
         } fixed z-10 bottom-32 right-5 rounded-lg shadow-lg shadow-black`}
         id="Chat"
       >
@@ -64,11 +72,11 @@ const Chat = ({ onClose }) => {
             {messages.map((message) => (
               <div
                 className={`${
-                  message.sender === 'bot'
-                    ? 'text-white bg-blue-700 border-2 rounded-lg'
-                    : 'text-black bg-green-400  border-2 rounded-lg'
+                  message.sender === "bot"
+                    ? "text-white bg-blue-700 border-2 rounded-lg"
+                    : "text-black bg-green-400  border-2 rounded-lg"
                 } ${
-                  message.sender === 'bot' ? 'text-left' : 'text-right'
+                  message.sender === "bot" ? "text-left" : "text-right"
                 } mb-2 max-w-xs p-2`}
               >
                 {message.text}
@@ -105,7 +113,7 @@ const Chat = ({ onClose }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;
