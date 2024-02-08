@@ -3,7 +3,7 @@
     <img src="https://github.com/nishitkekane/Inheritance-2023/blob/372b542936dd85f987ad292eacf6fe33ee19fb2d/Untitled.png" alt="CoC Inheritance 2022" width="500" height="166">
   </a>
   <br>
-  <img src="https://github.com/kasodeep/inheritance-project/blob/main/logo.jpeg" alt="WHYT?" width="550" height="225">
+  <img src="https://github.com/kasodeep/inheritance-project/blob/main/logo.jpeg" alt="WHYT?" width="550" height="400">
 </h1>
 
 <div align="center">
