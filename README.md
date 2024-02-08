@@ -249,11 +249,18 @@ Add names of your mentors with their emails and links to their GitHub accounts
 - [Mentor 1 Anushree Dere](https://github.com/AnushreeDere): aadere_b21@it.vjti.ac.in
 - [Mentor 2 Srushti](https://github.com/SrushtiGaidhane): srgaidhane_b21@it.vjti.ac.in
 ## 📱Screenshots
-Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
 
-You'll have to link the screenshots from your drive folder here.
 
-![Screenshot alt text](https://i.redd.it/qp8ocyzvyj8a1.jpg "Here is a screenshot")
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/ae8f1a21-4918-4719-9cb2-adc4aab92bd1" alt="animated" />
+</p>
 
-Use this template as a guide for writing your documentation. Feel free to customize and adapt it for you project.  
-For more Markdown syntax help, visit [here](https://www.markdownguide.org/basic-syntax/)
+![image](https://github.com/Aditya-y9/WhyT/assets/122613756/2bc59d1c-799d-4836-9127-ee3b97a32197)
+
+
+![image](https://github.com/Aditya-y9/WhyT/assets/122613756/9efa9df6-b987-4bb9-8501-1fd9c223cc3b)
+
+
+
+
+
