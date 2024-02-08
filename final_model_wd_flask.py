@@ -338,5 +338,49 @@ def home():
             return jsonify({"error": "Internal Server Error"}), 500
 
 
+def extract_text_from_pdf(pdf_path):
+    import fitz
+    doc = fitz.open(pdf_path)
+    text = ""
+    for page_num in range(doc.page_count):
+        page = doc[page_num]
+        text += page.get_text()
+    return text
+
+
+
+def ask_question(context, question):
+    from transformers import pipeline
+
+    # Load the question-answering pipeline with the deepset/roberta-base-squad2 model
+    qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2", tokenizer="deepset/roberta-base-squad2")
+    # Use the question-answering model to get an answer
+    result = qa_pipeline(context=context, question=question, max_length=512)  # Increase max_length
+    answer = result['answer']
+
+    return answer
+    
+# Example usage
+def ask(question):
+    text = extract_text_from_pdf(r"transcript_output.pdf")
+    answer = ask_question(text, question)
+    print("done")
+    return answer 
+
+@app.route('/qna', methods=['POST'])
+def qna():
+    if request.method == 'POST':
+        print('reached flask')
+        try:
+            data = request.json
+            return ask(data["question"])
+        except Exception as e:
+            print(f"Error processing request: {e}")
+            
+            traceback.print_exc()
+            return jsonify({"error": "Internal Server Error"}), 500
+
+
+
 if __name__ == '__main__':
    app.run(debug=True,port=3000)

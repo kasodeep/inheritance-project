@@ -16,7 +16,7 @@ const Chat = ({ onClose }) => {
       setMessages((prevMessages) => [...prevMessages, userMessage]);
 
       axiosClient
-        .post("http://localhost:4000/", { question: inputMessage })
+        .post("http://localhost:3000/qna", { question: inputMessage })
         .then((response) => {
           const responseData = response.data;
           setMessages((prevMessages) => [
@@ -27,8 +27,12 @@ const Chat = ({ onClose }) => {
         });
     }
   };
-
-
+  const handleKeyPress = (event) => {
+    // look for the `Enter` keyCode
+    if (event.keyCode === 13 || event.which === 13) {
+      handleSendMessage();
+    }
+  };
 
   useEffect(() => {
     // Scroll to the bottom when messages change.
@@ -92,6 +96,7 @@ const Chat = ({ onClose }) => {
               onChange={handleInputChange}
               placeholder="Type your message..."
               className="flex-1 outline-none focus:outline-black rounded bg-blue-100 p-2 mr-2"
+              onKeyPress={handleKeyPress}
             />
 
             {/* Send And Close Buttons. */}
