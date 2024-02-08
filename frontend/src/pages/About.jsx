@@ -18,7 +18,7 @@ const About = () => {
       name: "Ayush Gulhane",
       role: "Web Developer and Designer",
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/ayush-gulhane",
+        linkedin: "https://www.linkedin.com/in/ayushgulhane/",
         github: "https://github.com/AyuGul",
       },
       image: Ayush,
@@ -27,7 +27,7 @@ const About = () => {
       name: "Nishit Kekane",
       role: "Machine Learning Engineer",
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/nishit-kekane-b02b7324b/",
+        linkedin: "https://www.linkedin.com/in/nishitkekane/",
         github: "https://github.com/nishitkekane",
       },
       image: Nishit,
@@ -36,7 +36,7 @@ const About = () => {
       name: "Aditya Yedurkar",
       role: "Machine Learning Engineer",
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/aditya-yedurkar-curious/",
+        linkedin: "https://www.linkedin.com/in/adityayedurkar/",
         github: "https://github.com/aditya-y9",
       },
       image: Aditya,
