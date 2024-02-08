@@ -71,19 +71,57 @@ You can use icons too - find them [here](https://github.com/get-icon/geticon)  -
 - MongoDB <img src="https://skillicons.dev/icons?i=mongodb"  height=20px/>
 
 #### Python Libraries 
--fpdf
--pytube
--fitz
--transformers
--imagehash
--torch
--langchain
--flask
+
+#### transformers
+transformers is a python library that exposes an API to use many well-known transformer architectures, such as BERT, RoBERTa, GPT-2 or DistilBERT, that obtain state-of-the-art results on a variety of NLP tasks like text classification, information extraction, question answering, and text generation.
+#### moviepy
+moviepy is a Python library for video editing: cutting, concatenations, title insertions, video compositing (a.k.a. non-linear editing), video processing, and creation of custom effects.
+#### torch
+torch is a machine learning library that can be used for video summarization and slide extraction.
+#### torchvision
+torchvision is a library that can be used for video summarization and slide extraction.
+#### imagehash
+imagehash is a Python library that can be used to extract slides from a video.
+#### FPDF
+FPDF is a Python library that can be used to convert slides into a PDF.
+#### langchains
+langchains is a Python library that can be used to convert text into a summary.
+#### pytube
+pytube is a Python library that can be used to extract video content from YouTube.
+#### flask
+flask is a Python library that can be used to create a web application.
 
 ## 📈Progress
 
-- [x] Summary and Important slides generator of entered url's video
-- [x] ChatBot through which user can get his questions answered.
+List down all the fully implemented features in your project
+
+- [x] Summarization of YouTube videos (Summarizer)
+Our tool can extract key points and summaries from YouTube videos. It condenses lengthy videos into concise and easily digestible summaries.
+It is divided into 3 parts:
+1. #### Video Download
+    The user can input the URL of the video they want to summarize. The tool will then download the video from YouTube.
+2. #### Text Extraction
+    The tool will then extract the text from the video.
+3. #### Summarization
+    The tool will then summarize the text and display the summary to the user.
+
+   - [x] Important Slides Generation (Slides Extractor)
+Our tool automatically identifies significant slides within a presentation or lecture video. It extracts these slides and compiles them into a PDF document for easy reference.
+It is divided into 3 parts:
+1. #### Video Download
+    The user can input the URL of the video they want to summarize. The tool will then download the video from YouTube.
+2. #### Slide Extraction
+    The tool will then extract the slides from the video.
+3. #### Slide Classification
+    The tool will then classify the slides and display the PDF to the user.
+    ##### Basis of Classification
+    - Slide with text
+    - Slide with image
+    - Slide with both text and image
+    - Nth slide is not similar to the previous slide (N-1)th slide.
+
+- [x] Chatbot Integration
+Our integrated chatbot allows users to interact with the video content through questions and answers. Users can ask questions related to the video and receive responses based on the content discussed.
 
 ## 🔮Future Scope
 
@@ -99,13 +137,65 @@ You can use icons too - find them [here](https://github.com/get-icon/geticon)  -
 2)Professional Analysis and Research:
 -Analysts and Researchers: Provides analysts and researchers with a tool for efficiently extracting insights and important information from lengthy videos, enhancing productivity in data analysis and research.
 
+Application of Youtube URL - To - Summary and Screenshots PDF generation
+1. Students can use this tool to summarize their lectures and create PDFs of important slides.
+2. Analysts can use this tool to summarize important videos and create PDFs of important slides.
+3. Anyone seeking efficient information retrieval can use this tool to summarize important videos and create PDFs of important slides.
+
+Monetization Strategy
+We can charge a fee for the use of our tool in the following ways:
+1. We can charge a subscription fee for the use of our tool.
+2. We can charge a fee for the use of our tool on a per-use basis.
+3. We can charge a fee for the use of our tool on a per-video basis.
+
+#### Advertising
+1. We can display advertisements on our website.
+2. We can display advertisements on our tool.
+3. We can display advertisements on our PDFs.
+
 ## 🛠Project Setup
 
->Include your project setup basics here. Steps for how someone else can setup your project on their machine. Add any relevant details as well.
+### Clone the repository
+```bash
+git clone https://github.com/kasodeep/inheritance-project.git
+```
+
+
+### Install the required packages
+```bash
+pip install -r requirements.txt
+
+cd frontend
+npm install
+
+cd ..
+
+cd backend
+npm install
+```
 
 ## 💻Usage
 
->Steps to run your project once its setup. If you have an app or website, list how the user can go about using it.
+#### Run the following command to start the server
+```bash
+python app.py
+```
+
+#### Open new terminal and run the following command
+```bash
+cd backend
+npm run dev
+```
+
+#### Open new terminal and run the following command
+```bash
+cd frontend
+npm run dev
+```
+
+Congrats! You just started the project on your local machine.
+go to http://localhost:3000/ to see the project live.
+
 
 ## 👨‍💻Team Members
 
