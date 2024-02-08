@@ -33,7 +33,7 @@
 ## 📝Description
 Our project is a comprehensive tool designed to benefit a wide range of users, including students, analysts, and anyone seeking efficient information retrieval. We have developed a YouTube video summarizer coupled with an important slides generator, packaged in the form of PDFs.
 
-1. This feature enables users to extract key points and summaries from YouTube videos. It condenses lengthy videos into concise and easily digestible summaries.
+1.This feature enables users to extract key points and summaries from YouTube videos. It condenses lengthy videos into concise and easily digestible summaries.
 
 2.Our tool automatically identifies significant slides within a presentation or lecture video. It extracts these slides and compiles them into a PDF document for easy reference.
 
@@ -51,12 +51,12 @@ Our project is a comprehensive tool designed to benefit a wide range of users, i
 - [App APK Link]()
 - [Hosted Backend Link]()
 
-Add any more links/resources you used for your project
+<!-- Add any more links/resources you used for your project -->
 
 ## 🤖Tech-Stack
 
-Mention all languages/libraries/frameworks used in your project **domain-wise**   
-You can use icons too - find them [here](https://github.com/get-icon/geticon) 
+<!-- Mention all languages/libraries/frameworks used in your project **domain-wise**   
+You can use icons too - find them [here](https://github.com/get-icon/geticon)  -->
 
 #### Front-end
 - ReactJS <img src="https://skillicons.dev/icons?i=react" height=20px />
@@ -71,38 +71,33 @@ You can use icons too - find them [here](https://github.com/get-icon/geticon)
 - MongoDB <img src="https://skillicons.dev/icons?i=mongodb"  height=20px/>
 
 #### Python Libraries 
-- transformer
-- moviepy
-- torch
-- torchvision
-- imagehash
-- FPDF
-- langchains
-- pytube
-- flask
+-fpdf
+-pytube
+-fitz
+-transformers
+-imagehash
+-torch
+-langchain
+-flask
 
 ## 📈Progress
 
-List down all the fully implemented features in your project
-
-- [x] Fully Implemented Feature 1 
-- [x] Fully Implemented Feature 2
-
-List down all the partially implemented features in your project
-
-- [ ] Partially Implemented Feature 1 
-- [ ] Partially Implemented Feature 2
+- [x] Summary and Important slides generator of entered url's video
+- [x] ChatBot through which user can get his questions answered.
 
 ## 🔮Future Scope
 
-List down all the future plans for the project here
-
-- Future Feature 1
-- Future Feature 2
+- In our project, we aspire to expand functionality by not only allowing users to input playlist URLs but also providing comprehensive summaries and detailed notes for each playlist. This enhancement aims to offer users a deeper understanding of the content within the playlists, facilitating quicker navigation and comprehension 
+- In addition to our current objectives, we are looking to implement a feature that generates graphs for each topic within a playlist. These graphs will visually represent the relationships, connections, and frequencies of topics present in the playlist content. By visualizing the structure of topics, users will gain a clearer understanding of the playlist's thematic landscape, allowing for easier navigation and comprehension. 
 
 ## 💸Applications
 
->How can your project do its part in solving a real-life problem? What are its possible applications? Can it be monetized? Describe here.
+1)Educational Aid:
+-Students: Helps students in quickly grasping key concepts from educational videos and lectures.
+-Educators: Assists educators in creating concise summaries and slide decks for their teaching materials.
+
+2)Professional Analysis and Research:
+-Analysts and Researchers: Provides analysts and researchers with a tool for efficiently extracting insights and important information from lengthy videos, enhancing productivity in data analysis and research.
 
 ## 🛠Project Setup
 
@@ -123,8 +118,8 @@ List down all the future plans for the project here
 
 Add names of your mentors with their emails and links to their GitHub accounts
 
-- [Mentor 1 Anushree Dere](https://github.com/): Email 
-- [Mentor 2 Srushti](https://github.com/): Email 
+- [Mentor 1 Anushree Dere](https://github.com/AnushreeDere): aadere_b21@it.vjti.ac.in
+- [Mentor 2 Srushti](https://github.com/SrushtiGaidhane): srgaidhane_b21@it.vjti.ac.in
 ## 📱Screenshots
 Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
 
@@ -134,4 +129,3 @@ You'll have to link the screenshots from your drive folder here.
 
 Use this template as a guide for writing your documentation. Feel free to customize and adapt it for you project.  
 For more Markdown syntax help, visit [here](https://www.markdownguide.org/basic-syntax/)
-
