@@ -200,10 +200,11 @@ go to http://localhost:3000/ to see the project live.
 ## 👨‍💻Team Members
 
 - [Team Member 1 Nishit Kekane](https://github.com/nishitkekane): nishit.kekane04@gmail.com 
-- [Team Member 2 Deep Kasodariya](https://github.com/kasodeep): Email 
-- [Team Member 3 Ayush Gulhane](https://github.com/AyuGul): Email 
-- [Team Member 4 Aditya Yedurkar](https://github.com/aditya-y9): Email 
+- [Team Member 2 Deep Kasodariya](https://github.com/kasodeep): dskasodariya_b22@it.vjti.ac.in
+- [Team Member 3 Ayush Gulhane](https://github.com/AyuGul): asgulhane_b22@it.vjti.ac.in
+- [Team Member 4 Aditya Yedurkar](https://github.com/aditya-y9): amyedurkar_b22@it.vjti.ac.in
 
+  
 ## 👨‍🏫Mentors
 
 Add names of your mentors with their emails and links to their GitHub accounts
