@@ -70,26 +70,63 @@ You can use icons too - find them [here](https://github.com/get-icon/geticon)  -
 #### Database
 - MongoDB <img src="https://skillicons.dev/icons?i=mongodb"  height=20px/>
 
-#### Python Libraries 
+### Python Libraries
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/073e4b5f-4202-415e-884b-fcd9438eda6e" alt="animated" height="100" width="200"  />
+</p>
 
 #### transformers
 transformers is a python library that exposes an API to use many well-known transformer architectures, such as BERT, RoBERTa, GPT-2 or DistilBERT, that obtain state-of-the-art results on a variety of NLP tasks like text classification, information extraction, question answering, and text generation.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/a47dac41-a897-4293-b815-f47f4cbf1024" alt="animated" height="100" width="200"  />
+</p>
+
 #### moviepy
 moviepy is a Python library for video editing: cutting, concatenations, title insertions, video compositing (a.k.a. non-linear editing), video processing, and creation of custom effects.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/ec52202b-8277-403a-b021-b2873e7a1738" alt="animated" height="100" width="200"  />
+</p>
+
 #### torch
 torch is a machine learning library that can be used for video summarization and slide extraction.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/ec304a9d-a804-4fb4-b683-70a86612cad6" alt="animated" height="200" width="200"  />
+</p>
+
 #### torchvision
 torchvision is a library that can be used for video summarization and slide extraction.
+
 #### imagehash
 imagehash is a Python library that can be used to extract slides from a video.
+
 #### FPDF
 FPDF is a Python library that can be used to convert slides into a PDF.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/11cf8afb-adda-4999-9b8d-ad74b8ea67a3" alt="animated" height="100" width="200"  />
+</p>
+
 #### langchains
 langchains is a Python library that can be used to convert text into a summary.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/d6719ed6-34f8-4a24-8bf1-89a86be92df6" alt="animated" height="100" width="200"  />
+</p>
+
 #### pytube
 pytube is a Python library that can be used to extract video content from YouTube.
+
+<p align="center">
+<img src="https://github.com/Aditya-y9/WhyT/assets/122613756/911464c2-cb36-460c-9140-f8136db12e97" alt="animated" height="100" width="200"  />
+</p>
+
 #### flask
 flask is a Python library that can be used to create a web application.
+
 
 ## 📈Progress
 
