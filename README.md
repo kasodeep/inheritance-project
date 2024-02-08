@@ -39,6 +39,8 @@ Our project is a comprehensive tool designed to benefit a wide range of users, i
 
 3.Our integrated chatbot allows users to interact with the video content through questions and answers.Users can ask questions related to the video and receive responses based on the content discussed.
 
+4.We've crafted our website with the MERN stack—MongoDB, Express.js, React, and Node.js—to seamlessly blend front-end and back-end elements. Our user interface, styled with Tailwind CSS, offers a sleek and contemporary appearance, enhancing user interaction.
+
 
 ## 🔗Links
 
@@ -57,18 +59,16 @@ Mention all languages/libraries/frameworks used in your project **domain-wise**
 You can use icons too - find them [here](https://github.com/get-icon/geticon) 
 
 #### Front-end
-- HTML
-- CSS
-- JavaScript
+- ReactJS <img src="https://skillicons.dev/icons?i=react" height=20px />
+
+- Taiwind CSS <img src="https://skillicons.dev/icons?i=tailwind"  height=20px/>
 
 #### Back-end
-- NodeJS
-- ExpressJS
+- NodeJS <img src="https://skillicons.dev/icons?i=nodejs"  height=20px/>
+- ExpressJS <img src="https://skillicons.dev/icons?i=expressjs"  height=20px/>
 
 #### Database
-- MongoDB
-- SQL
-- etc.
+- MongoDB <img src="https://skillicons.dev/icons?i=mongodb"  height=20px/>
 
 #### Python Libraries 
 - transformer
@@ -116,8 +116,8 @@ List down all the future plans for the project here
 
 - [Team Member 1 Nishit Kekane](https://github.com/nishitkekane): nishit.kekane04@gmail.com 
 - [Team Member 2 Deep Kasodariya](https://github.com/kasodeep): Email 
-- [Team Member 2 Ayush Gulhane](https://github.com/): Email 
-- [Team Member 2 Aditya Yedurkar](https://github.com/): Email 
+- [Team Member 3 Ayush Gulhane](https://github.com/AyuGul): Email 
+- [Team Member 4 Aditya Yedurkar](https://github.com/aditya-y9): Email 
 
 ## 👨‍🏫Mentors
 

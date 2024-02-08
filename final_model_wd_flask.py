@@ -329,7 +329,9 @@ def home():
             with ZipFile(zip_filename, 'w') as zip:
                 for pdf_path in pdf_paths:
                     zip.write(pdf_path, os.path.basename(pdf_path))
-            
+            # os.remove('video.mp4')
+            # os.remove('slides.pdf')
+            # os.remove('output_summary.pdf')
             return send_file(zip_filename, as_attachment=True)
         except Exception as e:
             print(f"Error processing request: {e}")
