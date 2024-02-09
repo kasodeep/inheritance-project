@@ -240,10 +240,12 @@ go to http://localhost:3000/ to see the project live.
   
 ## 👨‍🏫Mentors
 
-Add names of your mentors with their emails and links to their GitHub accounts
-
 - [Mentor 1 Anushree Dere](https://github.com/AnushreeDere): aadere_b21@it.vjti.ac.in
 - [Mentor 2 Srushti](https://github.com/SrushtiGaidhane): srgaidhane_b21@it.vjti.ac.in
+
+  Special Thanks to [Pranav Janjani](https://github.com/pranavjanjani):janjanipranav@gmail.com for helping and supporting ML team throughout the project.
+
+  
 ## 📱Screenshots
 
 
