@@ -1,6 +1,6 @@
 # Contributing to Alien Invasion
 
-Thank you for considering contributing to Alien Invasion! We welcome contributions from the community to help improve and grow the game.
+Thank you for considering contributing to WHYT! We welcome contributions from the community to help improve and grow the game.
 
 ## Table of Contents
 - [Code of Conduct](#code-of-conduct)
