@@ -22,12 +22,21 @@ const Home = () => {
   }
 
   const handleDownload = (url) => {
-    axios
-      .get('http://localhost:5000/download-pdf', url)
-      .then((response) => response.blob())
-      .then((blob) => {
+    setIsLoading(true)
+    axiosClient
+      .post(
+        'http://localhost:3000/',
+        { url: url },
+        { responseType: 'arraybuffer' }
+      )
+      .then((response) => {
+        // Create a Blob from the received data
+        const blob = new Blob([response.data], { type: 'application/zip' })
+
+        // Use createObjectURL to generate a URL for the blob
         const blobUrl = window.URL.createObjectURL(blob)
 
+        // Create a link and trigger a download
         const link = document.createElement('a')
         link.href = blobUrl
         link.setAttribute('download', 'pdf_files.zip')

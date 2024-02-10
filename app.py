@@ -278,11 +278,17 @@ def images(video_path,output_pdf_path):
 """**Running Functions**"""
 
 def run(url):
+    print(type(url),url)
     get_transcript(url,"transcript_output.pdf")
+    print(1)
     text = extract_text_from_pdf("transcript_output.pdf")
+    print(2)
     summary = generate_summary_t5(text,tokenizer,model)
+    print(3)
     video_path=download_youtube_video(url,'video.mp4')
+    print(4)
     images(video_path,'slides.pdf')
+    print(5)
 
 #https://www.youtube.com/watch?v=reUZRyXxUs4
 
@@ -297,12 +303,21 @@ import os
 from zipfile import ZipFile
 app = Flask(__name__)
 CORS(app, origins=['http://localhost:5173'])
-
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 @app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
+        print('reached flask')
         try:
-            run(request.json["url"])
+            data = request.json
+            print(data)
+            run(data["url"])
             current_directory = os.getcwd()
 
             pdf_paths = [
@@ -314,13 +329,59 @@ def home():
             with ZipFile(zip_filename, 'w') as zip:
                 for pdf_path in pdf_paths:
                     zip.write(pdf_path, os.path.basename(pdf_path))
-            
+            # os.remove('video.mp4')
+            # os.remove('slides.pdf')
+            # os.remove('output_summary.pdf')
             return send_file(zip_filename, as_attachment=True)
         except Exception as e:
             print(f"Error processing request: {e}")
             
             traceback.print_exc()
             return jsonify({"error": "Internal Server Error"}), 500
+
+
+def extract_text_from_pdf(pdf_path):
+    import fitz
+    doc = fitz.open(pdf_path)
+    text = ""
+    for page_num in range(doc.page_count):
+        page = doc[page_num]
+        text += page.get_text()
+    return text
+
+
+
+def ask_question(context, question):
+    from transformers import pipeline
+
+    # Load the question-answering pipeline with the deepset/roberta-base-squad2 model
+    qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2", tokenizer="deepset/roberta-base-squad2")
+    # Use the question-answering model to get an answer
+    result = qa_pipeline(context=context, question=question, max_length=512)  # Increase max_length
+    answer = result['answer']
+
+    return answer
+    
+# Example usage
+def ask(question):
+    text = extract_text_from_pdf(r"transcript_output.pdf")
+    answer = ask_question(text, question)
+    print("done")
+    return answer 
+
+@app.route('/qna', methods=['POST'])
+def qna():
+    if request.method == 'POST':
+        print('reached flask')
+        try:
+            data = request.json
+            return ask(data["question"])
+        except Exception as e:
+            print(f"Error processing request: {e}")
+            
+            traceback.print_exc()
+            return jsonify({"error": "Internal Server Error"}), 500
+
 
 
 if __name__ == '__main__':

@@ -1,47 +1,47 @@
-import React from "react";
-import Aditya from "../assets/images/aditya.jpg";
-import Deep from "../assets/images/deep.jpg";
-import Ayush from "../assets/images/ayush.jpg";
-import Nishit from "../assets/images/nishit.jpg";
+import React from 'react'
+import Aditya from '../assets/images/aditya.jpg'
+import Deep from '../assets/images/deep.jpg'
+import Ayush from '../assets/images/ayush.jpg'
+import Nishit from '../assets/images/nishit.jpg'
 const About = () => {
   const teamMembers = [
     {
-      name: "Deep Kasodariya",
-      role: "Web Developer and Designer",
+      name: 'Deep Kasodariya',
+      role: 'Web Developer and Designer',
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/deep-kasodariya/",
-        github: "https://github.com/kasodeep",
+        linkedin: 'https://www.linkedin.com/in/deep-kasodariya/',
+        github: 'https://github.com/kasodeep',
       },
       image: Deep,
     },
     {
-      name: "Ayush Gulhane",
-      role: "Web Developer and Designer",
+      name: 'Ayush Gulhane',
+      role: 'Web Developer and Designer',
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/ayush-gulhane-b97219274/",
-        github: "https://github.com/AyuGul",
+        linkedin: 'https://www.linkedin.com/in/ayush-gulhane-b97219274/',
+        github: 'https://github.com/AyuGul',
       },
       image: Ayush,
     },
     {
-      name: "Nishit Kekane",
-      role: "Machine Learning Engineer",
+      name: 'Nishit Kekane',
+      role: 'Machine Learning Engineer',
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/nishit-kekane-b02b7324b/",
-        github: "https://github.com/nishitkekane",
+        linkedin: 'https://www.linkedin.com/in/nishit-kekane-b02b7324b/',
+        github: 'https://github.com/nishitkekane',
       },
       image: Nishit,
     },
     {
-      name: "Aditya Yedurkar",
-      role: "Machine Learning Engineer",
+      name: 'Aditya Yedurkar',
+      role: 'Machine Learning Engineer',
       socialMedia: {
-        linkedin: "https://www.linkedin.com/in/aditya-yedurkar-curious/",
-        github: "https://github.com/aditya-y9",
+        linkedin: 'https://www.linkedin.com/in/aditya-yedurkar-curious/',
+        github: 'https://github.com/aditya-y9',
       },
       image: Aditya,
     },
-  ];
+  ]
 
   return (
     <section className="xl:padding-l wide:padding-r padding-b py-14">
@@ -116,7 +116,7 @@ const About = () => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
