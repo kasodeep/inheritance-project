@@ -298,7 +298,7 @@ from zipfile import ZipFile
 app = Flask(__name__)
 CORS(app, origins=['http://localhost:5173'])
 
-@app.route('/download-pdf', methods=['POST'])
+@app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
         try:
