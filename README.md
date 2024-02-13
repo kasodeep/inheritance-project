@@ -158,7 +158,10 @@ Our integrated chatbot allows users to interact with the video content through q
 ## 🔮Future Scope
 
 - In our project, we aspire to expand functionality by not only allowing users to input playlist URLs but also providing comprehensive summaries and detailed notes for each playlist. This enhancement aims to offer users a deeper understanding of the content within the playlists, facilitating quicker navigation and comprehension 
-- In addition to our current objectives, we are looking to implement a feature that generates graphs for each topic within a playlist. These graphs will visually represent the relationships, connections, and frequencies of topics present in the playlist content. By visualizing the structure of topics, users will gain a clearer understanding of the playlist's thematic landscape, allowing for easier navigation and comprehension. 
+- In addition to our current objectives, we are looking to implement a feature that generates graphs for each topic within a playlist. These graphs will visually represent the relationships, connections, and frequencies of topics present in the playlist content. By visualizing the structure of topics, users will gain a clearer understanding of the playlist's thematic landscape, allowing for easier navigation and comprehension.
+  <p align="center">
+<img src="https://raw.githubusercontent.com/nishitkekane/inheritance-project/45a7b6805a36a617c19b7aa9888cb23e4e5e9d0a/Screenshot%202024-02-13%20154802.png" alt="animated" height="100" width="200"  />
+</p>
 
 ## 💸Applications
 
